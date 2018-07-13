@@ -15,7 +15,11 @@ Ubuntu Operating system.<br>
     Orange Pi IO pin manipulation libraries to control the chip select.<br>
     Python for household.<br>
     Crontab for scheduling<br>
-
+	
+    sudo apt-get update
+	sudo apt-get install i2c-tools  
+        sudo apt-get install python-smbus  
+	sudo apt-get install libi2c-dev 
 Maybe I will be able to run gnu Radio.<br>
 
 # We now need to download the operating system
