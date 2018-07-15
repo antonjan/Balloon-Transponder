@@ -35,8 +35,21 @@ Continue? [Y/n] Y
 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 70: -- -- -- -- -- -- -- --                      
 
+The min and maximum the IQ modulator operating frequensy is 140 to 1500Mhz<br>
+How can you cotrole the frequency by using the following command.<br>
+/home/balloon/Balloon-Transponder/si570/si570 -s 145.855<br>
+if you want to read the frequensy <br>
+/home/balloon/Balloon-Transponder/si570/si570 -r<br>
+Please remeber you will need to Enable the si570 by disabeling Port PA06.=(0)<br>
 
+We now need to set the IQ signal biase volatge to about 2.5V by adjusting the Potensiometers and measuring the the volatge on pin 15 and 16 of the TRF3701.<br>
+Its easer to put yur ptobe on the potensiometer wiper pin.<br>
+
+Seting up the IQ audio signal level.<br>
+By using the application alsamixer you can sent the level to about 500mv(p-p) onI and Q  for maximum modelation on cap c7 and c12.<br>
+Please remeber to enable the IQ modulator you need to disable Port PA07 = 0<br>
 Maybe I will be able to run gnu Radio.<br>
+
 
 # We now need to download the operating system
 
