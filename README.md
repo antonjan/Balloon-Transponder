@@ -20,6 +20,22 @@ Ubuntu Operating system.<br>
 	sudo apt-get install i2c-tools  
         sudo apt-get install python-smbus  
 	sudo apt-get install libi2c-dev 
+sudo i2cdetect -r 1
+WARNING! This program can confuse your I2C bus, cause data loss and worse!
+I will probe file /dev/i2c-1 using read byte commands.
+I will probe address range 0x03-0x77.
+Continue? [Y/n] Y
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                      
+
+
 Maybe I will be able to run gnu Radio.<br>
 
 # We now need to download the operating system
