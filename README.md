@@ -51,38 +51,67 @@ sudo armbianmonitor -m
 nmtui
    
 
-28  su - balloon
-   29  sudo rtl_test
-   30  cd
-   31  git clone https://github.com/simonyiszk/csdr.git
-   32  cd csdr/
-   33  ls
-   34  cd
-   35  sudo apt-get install libfftw3-dev
-   36  cd csdr/
-   37  make
-   38  sudo make install
-   39  csdr
-   40  cd
-   41  sudo apt-get install cw
-   42  cw -h
-   43  cw test 123
-   44  man cw
-   45  echo "zr6aic balloon experiment" | cw -w 25 -t 700
-   46  aplay -l
-   47  sudo aplay -l
-   48  speacker-test
-   49  speaker-test
-   50  cat /proc/asound/cards
-   51  pqd
-   52  cd /
-   53  ls
-   54  sudo vi /boot/armbianEnv.txt
-   55  sudo shutdown -r 0
-   56  aplay -l
-   57  sudo aplay -l
-   58  sudo arecord -l
-   59  echo "zr6aic balloon experiment" | cw -w 25 -t 700
+su - balloon
+sudo rtl_test
+#Ok we now need to install the csdr DSP signal prosessing libraeries.<br>
+#Lets first install the dependensy libraries<br>
+sudo apt-get install libfftw3-dev<br>
+#we need to install the compiler<br>
+sudo pt-get install cmake<br> 
+cd<br>
+git clone https://github.com/simonyiszk/csdr.git<br>
+#Change directory into csdr<br>
+cd csdr<br>
+#Lets compile the library<br>
+make<br>
+#Install teh library<br>
+sudo make install<br>
+#Lets check if csdr is working<br>
+csdr<br>
+#you should see the following<br>
+csdr - a simple commandline tool for Software Defined Radio receiver DSP.<br>
+#usage: <br>
+#csdr function_name <function_param1> <function_param2> [optional_param] ...<br>
+#We now need to install rtl sdr libraeries and drivers<br>
+cd<br>
+git clone git://git.osmocom.org/rtl-sdr.git<br>
+cd rtl-sdr/<br>
+mkdir build<br>
+cd build<br>
+cmake ../<br>
+make<br>
+sudo make install<br>
+sudo ldconfig<br>
+#Ok now we need to connect a rtl usbdongle to the usb port and see if the rtl_test utility is working.<br>
+sudo rtl_test
+#>>>>>>>>>>>>>>>>>> add results here<br>
+#OK lets test rtl and csdr together.<br>
+rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr convert_u8_f | csdr fir_decimate_cc 10 0.05 HAMMING | csdr fmdemod_quadri_cf | csdr fractional_decimator_ff 5 | csdr deemphasis_wfm_ff 48000 50e-6 | csdr convert_f_i16 | mplayer -cache 1024 -quiet -rawaudio samplesize=2:channels=1:rate=48000 -demuxer rawaudio -
+
+#we now need to makesure we have the ALSA audio configeration setup so we can use the alsa loopback and the line in and out configured.
+# we will be using alsa out to send the I and Q audio to the IQ modulator via alsa using aplay command.
+# we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.
+
+cd<br>
+sudo apt-get install cw
+cw -h
+cw test 123
+man cw
+echo "zr6aic balloon experiment" | cw -w 25 -t 700
+aplay -l
+sudo aplay -l
+speacker-test
+speaker-test
+cat /proc/asound/cards
+pqd
+cd /
+ls
+sudo vi /boot/armbianEnv.txt
+sudo shutdown -r 0
+aplay -l
+sudo aplay -l
+sudo arecord -l
+echo "zr6aic balloon experiment" | cw -w 25 -t 700
 
 
 
@@ -156,13 +185,7 @@ sync<br>
 
 Then unmounted the sd card and put it in the Orange PI to boot up.<br>
 
-
 I used a serial debug cable to connect to the Orange pi. (Available from Giga Technology)<br>
-
-
-
-
-
 
 # Status
 This Project has just started and is not compleet yet.
