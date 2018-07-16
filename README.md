@@ -109,6 +109,11 @@ sudo rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr con
 # we will be using alsa out to send the I and Q audio to the IQ modulator via alsa using aplay command.
 # we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.
 
+#Instsalling the xwindows and vnc.
+sudo apt-get xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
+sudo apt-get install xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
+sudo apt-get install tightvncserver thunar-volman udisks2 gvfs
+sudo apt-get install gnuradio
 cd<br>
 sudo apt-get install cw
 cw -h
