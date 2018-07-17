@@ -86,16 +86,38 @@ cmake ../<br>
 make<br>
 sudo make install<br>
 sudo ldconfig<br>
+sudo apt-get install libusb-1.0-0-dev<br>
+sudo apt-get install mplayer<br>
 #Ok now we need to connect a rtl usbdongle to the usb port and see if the rtl_test utility is working.<br>
-sudo rtl_test
-#>>>>>>>>>>>>>>>>>> add results here<br>
+sudo rtl_test<br>
+#[sudo] password for balloon:<br> 
+#Found 1 device(s):<br>
+#  0:  Realtek, RTL2838UHIDIR, SN: 00000001<br>
+#
+#Using device 0: Generic RTL2832U OEM<br>
+#Found Rafael Micro R820T tuner<br>
+#Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6 <br>
+#[R82XX] PLL not locked!<br>
+#Sampling at 2048000 S/s.<br>
+#
+#Info: This tool will continuously read from the device, and report if<br>
+#samples get lost. If you observe no further output, everything is fine.<br>
+#
+#Reading samples in async mode...<br>
+#Allocating 15 zero-copy buffers<br>
+#lost at least 164 bytes<br>
+#
 #OK lets test rtl and csdr together.<br>
-rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr convert_u8_f | csdr fir_decimate_cc 10 0.05 HAMMING | csdr fmdemod_quadri_cf | csdr fractional_decimator_ff 5 | csdr deemphasis_wfm_ff 48000 50e-6 | csdr convert_f_i16 | mplayer -cache 1024 -quiet -rawaudio samplesize=2:channels=1:rate=48000 -demuxer rawaudio -
-
+sudo rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr convert_u8_f | csdr fir_decimate_cc 10 0.05 HAMMING | csdr fmdemod_quadri_cf | csdr fractional_decimator_ff 5 | csdr deemphasis_wfm_ff 48000 50e-6 | csdr convert_f_i16 |sudo  mplayer -cache 1024 -quiet -rawaudio samplesize=2:channels=1:rate=48000 -demuxer rawaudio -
 #we now need to makesure we have the ALSA audio configeration setup so we can use the alsa loopback and the line in and out configured.
 # we will be using alsa out to send the I and Q audio to the IQ modulator via alsa using aplay command.
 # we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.
 
+#Instsalling the xwindows and vnc.
+sudo apt-get xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
+sudo apt-get install xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
+sudo apt-get install tightvncserver thunar-volman udisks2 gvfs
+sudo apt-get install gnuradio
 cd<br>
 sudo apt-get install cw
 cw -h
