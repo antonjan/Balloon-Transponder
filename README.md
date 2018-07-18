@@ -183,6 +183,7 @@ Seting up the IQ audio signal level.<br>
 By using the application alsamixer you can sent the level to about 500mv(p-p) onI and Q  for maximum modelation on cap c7 and c12.<br>
 Please remeber to enable the IQ modulator you need to disable Port PA07 = 0<br>
 Maybe I will be able to run gnu Radio.<br>
+we now will create IQ audio test files.
 
 
 # We now need to download the operating system
@@ -212,3 +213,33 @@ I used a serial debug cable to connect to the Orange pi. (Available from Giga Te
 # Status
 This Project has just started and is not compleet yet.
 
+  106  gnuradio-com
+  107  gnuradio-companion 
+  108  sudo find / |grep gnuradio-companion
+  109  sudo apt-get install gnuradio gr-osmosdr
+  110  sudo gnuradio-companion 
+  111  ls
+  112  git clone https://github.com/jgibbard/iqtool.git
+  113  cd iqtool/
+  114  ls
+  115  cat README.md 
+  116  ls
+  117  ./iqgen.py
+  118  chmod 755 *.py
+  119  ls
+  120  ./iqgen.py
+  121  ./iqgen.py -h
+  122  sudo apt-get install python3-matplotlib
+  123  df -k
+  124  ./iqgen.py -h
+  125  sudo apt-get build-dep python-matplotlib
+  126  sudo apt-get install python-matplotlib
+  127  ./iqgen.py -h
+  128  sudo apt-get install python-tk
+  129  ./iqgen.py -h
+  130  history 100
+  131  cd
+  132  ls
+  133  cd Balloon-Transponder/
+  134  vi README.md 
+  135  history 30 >> README.md 
