@@ -2,6 +2,10 @@
 This repository will have the Software for the Orange PI SDR transponder.<br>
 This software controle the SDR transmitter board and RTL-SDR dongle for RX.<br>
 The link to the SDR Transmitter board <a href="https://github.com/antonjan/IQ_Modulatori">https://github.com/antonjan/IQ_Modulatori</a><br>
+# Project Status
+This project has just started 15 June 2018.<br>
+The code is not compleet yet but hardware board is compleet.<br>
+# Software instelation prosedure for Orange Pi Zero
 Armbian Operating system.<br>
 The operating system I recomentd is Armbian and it can be downloaded here <a href="https://www.armbian.com/orange-pi-zero/">https://www.armbian.com/orange-pi-zero/</a><br>
 Then unzip the file using the.<br>
@@ -32,12 +36,12 @@ sudo apt-get upgrade<br>
 if you know your wifi id and key the do the following to make yor Pi connect<br>
 nmtui-connect SSIDi or run this if you dont now your wifi name nmtui-connect<br>
 and enter your Key<br>
-ok now we need to sink our time zone<br>
+#ok now we need to sink our time zone<br>
 dpkg-reconfigure tzdata<br>
-we now need to enable the I2C bus and I used the following utility.<br>
+#we now need to enable the I2C bus and I used the following utility.<br>
 sudo armbian-config<br>
 select Hardware - toggle board low level functions: UART, I2C, SPI, …
-Enable the I2C bus as we need it to controle the Local Ocelattor and Read output power from A/D converter<br>
+Enable the I2C bus as we need it to controle the Local Ocelattor and Read output RF power level from A/D converter<br>
 Ok We now need to install all the dependinsy applications reqierd to controle the RTL recever and IQ modulator.<br>
 Lets isntall the SDR reseption applications for the RTL dongle and iarspy<br>
 
