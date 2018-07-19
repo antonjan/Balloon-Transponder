@@ -118,6 +118,11 @@ sudo apt-get xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
 sudo apt-get install xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
 sudo apt-get install tightvncserver thunar-volman udisks2 gvfs
 sudo apt-get install gnuradio
+#Installing gnuradio
+sudo apt-get install gnuradio gr-osmosdr
+#Test gnuradio
+sudo gnuradio-companion 
+#we now need to install CW
 cd<br>
 sudo apt-get install cw
 cw -h
@@ -138,6 +143,15 @@ aplay -l
 sudo aplay -l
 sudo arecord -l
 echo "zr6aic balloon experiment" | cw -w 25 -t 700
+sudo apt-get install gnuradio gr-osmosdr
+sudo gnuradio-companion       
+#we now need to install the IQ Test applications
+sudo apt-get install python-matplotlib
+sudo apt-get install python-tk
+git clone https://github.com/jgibbard/iqtool.git
+cd iqtool/
+chmod 755 *.py
+./iqgen.py -h
 
 
 
@@ -154,10 +168,10 @@ echo "zr6aic balloon experiment" | cw -w 25 -t 700
     Python for household.<br>
     Crontab for scheduling<br>
 	
-    sudo apt-get update<br>
-	sudo apt-get install i2c-tools <br> 
-        sudo apt-get install python-smbus <br> 
-	sudo apt-get install libi2c-dev<br> 
+sudo apt-get update<br>
+sudo apt-get install i2c-tools <br> 
+sudo apt-get install python-smbus <br> 
+sudo apt-get install libi2c-dev<br> 
 sudo i2cdetect -r 1<br>
 WARNING! This program can confuse your I2C bus, cause data loss and worse!<br>
 I will probe file /dev/i2c-1 using read byte commands.<br>
@@ -217,33 +231,12 @@ I used a serial debug cable to connect to the Orange pi. (Available from Giga Te
 # Status
 This Project has just started and is not compleet yet.
 
-  106  gnuradio-com
-  107  gnuradio-companion 
-  108  sudo find / |grep gnuradio-companion
-  109  sudo apt-get install gnuradio gr-osmosdr
-  110  sudo gnuradio-companion 
-  111  ls
-  112  git clone https://github.com/jgibbard/iqtool.git
-  113  cd iqtool/
-  114  ls
-  115  cat README.md 
-  116  ls
-  117  ./iqgen.py
-  118  chmod 755 *.py
-  119  ls
-  120  ./iqgen.py
-  121  ./iqgen.py -h
-  122  sudo apt-get install python3-matplotlib
-  123  df -k
-  124  ./iqgen.py -h
-  125  sudo apt-get build-dep python-matplotlib
-  126  sudo apt-get install python-matplotlib
-  127  ./iqgen.py -h
-  128  sudo apt-get install python-tk
-  129  ./iqgen.py -h
-  130  history 100
-  131  cd
-  132  ls
-  133  cd Balloon-Transponder/
-  134  vi README.md 
-  135  history 30 >> README.md 
+sudo apt-get install gnuradio gr-osmosdr
+sudo gnuradio-companion 
+#we now need to install the IQ Test applications
+sudo apt-get install python-matplotlib
+sudo apt-get install python-tk
+git clone https://github.com/jgibbard/iqtool.git
+cd iqtool/
+chmod 755 *.py
+./iqgen.py -h
