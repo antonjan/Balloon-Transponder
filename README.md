@@ -110,8 +110,8 @@ sudo rtl_test<br>
 #OK lets test rtl and csdr together.<br>
 sudo rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr convert_u8_f | csdr fir_decimate_cc 10 0.05 HAMMING | csdr fmdemod_quadri_cf | csdr fractional_decimator_ff 5 | csdr deemphasis_wfm_ff 48000 50e-6 | csdr convert_f_i16 |sudo  mplayer -cache 1024 -quiet -rawaudio samplesize=2:channels=1:rate=48000 -demuxer rawaudio -
 #we now need to makesure we have the ALSA audio configeration setup so we can use the alsa loopback and the line in and out configured.
-# we will be using alsa out to send the I and Q audio to the IQ modulator via alsa using aplay command.
-# we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.
+#we will be using alsa out to send the I and Q audio to the IQ modulator via alsa using aplay command.
+#we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.
 
 #Instsalling the xwindows and vnc.
 sudo apt-get xorg lightdm xfce4 tango-icon-theme gnome-icon-theme<br>
