@@ -7,6 +7,8 @@ This project has just started 15 June 2018.<br>
 The code is not compleet yet but hardware board is compleet.<br>
 # Block diagram of SDR transponder and OBC<br>
 ![Alt text](doc/images/Block_Diagram_v2.jpg?raw=true "Block Diagram")<br>
+# Flow Diagram
+![Alt text](doc/images/Transponder_Signal_Path.jpg?raw=true "Flow Diagram")<br>
 # Software instelation prosedure for Orange Pi Zero
 Armbian Operating system.<br>
 The operating system I recomentd is Armbian and it can be downloaded here <a href="https://www.armbian.com/orange-pi-zero/">https://www.armbian.com/orange-pi-zero/</a><br>
