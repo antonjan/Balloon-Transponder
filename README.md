@@ -114,59 +114,59 @@ sudo rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr con
 # we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.
 
 #Instsalling the xwindows and vnc.
-sudo apt-get xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
-sudo apt-get install xorg lightdm xfce4 tango-icon-theme gnome-icon-theme
-sudo apt-get install tightvncserver thunar-volman udisks2 gvfs
-sudo apt-get install gnuradio
-#Installing gnuradio
-sudo apt-get install gnuradio gr-osmosdr
-#Test gnuradio
-sudo gnuradio-companion 
-#we now need to install CW
+sudo apt-get xorg lightdm xfce4 tango-icon-theme gnome-icon-theme<br>
+sudo apt-get install xorg lightdm xfce4 tango-icon-theme gnome-icon-theme<br>
+sudo apt-get install tightvncserver thunar-volman udisks2 gvfs<br>
+sudo apt-get install gnuradio<br>
+#Installing gnuradio<br>
+sudo apt-get install gnuradio gr-osmosdr<br>
+#Test gnuradiobr>
+sudo gnuradio-companion <br>
+#we now need to install CW<br>
 cd<br>
-sudo apt-get install cw
-cw -h
-cw test 123
-man cw
-echo "zr6aic balloon experiment" | cw -w 25 -t 700
-aplay -l
-sudo aplay -l
-speacker-test
-speaker-test
-cat /proc/asound/cards
+sudo apt-get install cw<br>
+cw -h<br>
+cw test 123<br>
+man cw<br>
+echo "zr6aic balloon experiment" | cw -w 25 -t 700<br>
+aplay -l<br>
+sudo aplay -l<br>
+speacker-test<br>
+speaker-test<br>
+cat /proc/asound/cards<br>
 pqd
 cd /
 ls
-sudo vi /boot/armbianEnv.txt
-sudo shutdown -r 0
-aplay -l
-sudo aplay -l
-sudo arecord -l
-echo "zr6aic balloon experiment" | cw -w 25 -t 700
-sudo apt-get install gnuradio gr-osmosdr
-sudo gnuradio-companion       
-#we now need to install the IQ Test applications
-sudo apt-get install python-matplotlib
-sudo apt-get install python-tk
-git clone https://github.com/jgibbard/iqtool.git
-cd iqtool/
-chmod 755 *.py
-./iqgen.py -h
+sudo vi /boot/armbianEnv.txt<br>
+sudo shutdown -r 0<br>
+aplay -l<br>
+sudo aplay -l<br>
+sudo arecord -l<br>
+echo "zr6aic balloon experiment" | cw -w 25 -t 700<br>
+sudo apt-get install gnuradio gr-osmosdr<br>
+sudo gnuradio-companion<br>       
+#we now need to install the IQ Test applications<br>
+sudo apt-get install python-matplotlib<br>
+sudo apt-get install python-tk<br>
+git clone https://github.com/jgibbard/iqtool.git<br>
+cd iqtool/<br>
+chmod 755 *.py<br>
+./iqgen.py -h<br>
 
 
 
 <br>
-    rtl-tcp<br>
-    csdr<br>
-    cw<br>
-    direwolf<br>
-    i2c libraries for orange pi<br>
-    Alsa for the IQ audio generation and reading<br>
-    rtl-sdr<br>
-    sox<br>
-    Orange Pi IO pin manipulation libraries to control the chip select.<br>
-    Python for household.<br>
-    Crontab for scheduling<br>
+rtl-tcp<br>
+csdr<br>
+cw<br>
+direwolf<br>
+i2c libraries for orange pi<br>
+Alsa for the IQ audio generation and reading<br>
+rtl-sdr<br>
+sox<br>
+Orange Pi IO pin manipulation libraries to control the chip select.<br>
+Python for household.<br>
+Crontab for scheduling<br>
 	
 sudo apt-get update<br>
 sudo apt-get install i2c-tools <br> 
@@ -230,13 +230,13 @@ I used a serial debug cable to connect to the Orange pi. (Available from Giga Te
 
 # Status
 This Project has just started and is not compleet yet.
-
-sudo apt-get install gnuradio gr-osmosdr
-sudo gnuradio-companion 
-#we now need to install the IQ Test applications
-sudo apt-get install python-matplotlib
-sudo apt-get install python-tk
-git clone https://github.com/jgibbard/iqtool.git
-cd iqtool/
-chmod 755 *.py
-./iqgen.py -h
+<br>
+sudo apt-get install gnuradio gr-osmosdr<br>
+sudo gnuradio-companion<br> 
+#we now need to install the IQ Test applications<br>
+sudo apt-get install python-matplotlib<br>
+sudo apt-get install python-tk<br>
+git clone https://github.com/jgibbard/iqtool.git<br>
+cd iqtool/<br>
+chmod 755 *.py<br>
+./iqgen.py -h<br>
