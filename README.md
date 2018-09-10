@@ -96,7 +96,7 @@ sudo apt-get install mplayer<br>
 sudo rtl_test<br>
 #[sudo] password for balloon:<br> 
 #Found 1 device(s):<br>
-#  0:  Realtek, RTL2838UHIDIR, SN: 00000001<br>
+#0:  Realtek, RTL2838UHIDIR, SN: 00000001<br>
 #
 #Using device 0: Generic RTL2832U OEM<br>
 #Found Rafael Micro R820T tuner<br>
