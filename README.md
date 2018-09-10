@@ -50,13 +50,13 @@ Ok We now need to install all the dependinsy applications reqierd to controle th
 Lets isntall the SDR reseption applications for the RTL dongle and iarspy<br>
 
 Lets install the aplication that will create the CW for the Telemetry Beacon.<br>
-sudo apt-get install cw
-cw
-aplay -l
-sudo aplay -l
-sudo alsamixer
-sudo armbianmonitor -m
-nmtui
+sudo apt-get install cw<br>
+cw<br>
+aplay -l<br>
+sudo aplay -l<br>
+sudo alsamixer<br>
+sudo armbianmonitor -m<br>
+nmtui<br>
    
 
 su - balloon
@@ -112,12 +112,12 @@ sudo rtl_test<br>
 #lost at least 164 bytes<br>
 #
 #OK lets test rtl and csdr together.<br>
-sudo rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr convert_u8_f | csdr fir_decimate_cc 10 0.05 HAMMING | csdr fmdemod_quadri_cf | csdr fractional_decimator_ff 5 | csdr deemphasis_wfm_ff 48000 50e-6 | csdr convert_f_i16 |sudo  mplayer -cache 1024 -quiet -rawaudio samplesize=2:channels=1:rate=48000 -demuxer rawaudio -
-#we now need to makesure we have the ALSA audio configeration setup so we can use the alsa loopback and the line in and out configured.
-#we will be using alsa out to send the I and Q audio to the IQ modulator via alsa using aplay command.
-#we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.
+sudo rtl_sdr -s 2400000 -f `python -c "print int($1*1e6)"` -g $GAIN - | csdr convert_u8_f | csdr fir_decimate_cc 10 0.05 HAMMING | csdr fmdemod_quadri_cf | csdr fractional_decimator_ff 5 | csdr deemphasis_wfm_ff 48000 50e-6 | csdr convert_f_i16 |sudo  mplayer -cache 1024 -quiet -rawaudio samplesize=2:channels=1:rate=48000 -demuxer rawaudio -<br>
+#we now need to makesure we have the ALSA audio configeration setup so we can use the alsa loopback and the line in and out configured.<br>
+#we will be using alsa out to send the I and Q audio to the IQ modulator via alsa using aplay command.<br>
+#we will be using loopback 0 for CW and afsk audio libraries to csdr to modulate FM iq stream.<br>
 
-#Instsalling the xwindows and vnc.
+#Instsalling the xwindows and vnc.<br>
 sudo apt-get xorg lightdm xfce4 tango-icon-theme gnome-icon-theme<br>
 sudo apt-get install xorg lightdm xfce4 tango-icon-theme gnome-icon-theme<br>
 sudo apt-get install tightvncserver thunar-volman udisks2 gvfs<br>
@@ -244,3 +244,5 @@ git clone https://github.com/jgibbard/iqtool.git<br>
 cd iqtool/<br>
 chmod 755 *.py<br>
 ./iqgen.py -h<br>
+
+ref: https://github.com/MLAB-project/si570<br>
