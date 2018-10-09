@@ -1,7 +1,7 @@
 # Balloon-Transponder
 This repository will have the Software for the Orange PI SDR transponder.<br>
 This software controle the SDR transmitter board and RTL-SDR dongle for RX.<br>
-The link to the SDR Transmitter board <a href="https://github.com/antonjan/IQ_Modulatori">https://github.com/antonjan/IQ_Modulatori</a><br>
+The link to the SDR Transmitter board <a href="https://github.com/antonjan/IQ_Modulatori">https://github.com/antonjan/IQ_Modulator</a><br>
 # Project Status
 This project has just started 15 June 2018.<br>
 The code is not compleet yet but hardware board is compleet.<br>
