@@ -245,6 +245,9 @@ cd iqtool/<br>
 chmod 755 *.py<br>
 ./iqgen.py -h<br>
 # Gnu Radio test flow
+This flow can take audio from 1khz Sine generator or alsa microphone selectable.<br>
+The output id FFT scope and spectral.<br>
+The output signal can be send to Alsa or file in wav format and is selectable<br>
 ![Alt text](images/Gnu_radio_iq_modelation_for_Cube_sat_1.png?raw=true "Block Diagram")<br> 
 Application output <br>
 ![Alt text](images/Gnu_radio_iq_modelation_for_Cube_sat_2.png?raw=true "Block Diagram")<br> 
